@@ -1,11 +1,79 @@
-object Form1: TForm1
+object FPrincipal: TFPrincipal
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 480
-  ClientWidth = 640
+  ClientHeight = 316
+  ClientWidth = 657
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
-  DesignerMasterStyle = 0
+  DesignerMasterStyle = 3
+  object ScaledLayout1: TScaledLayout
+    Align = Client
+    OriginalWidth = 657.000000000000000000
+    OriginalHeight = 316.000000000000000000
+    Size.Width = 657.000000000000000000
+    Size.Height = 316.000000000000000000
+    Size.PlatformDefault = False
+    object Layout1: TLayout
+      Align = Bottom
+      Position.Y = 288.000000000000000000
+      Size.Width = 657.000000000000000000
+      Size.Height = 28.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Label1: TLabel
+        Align = Client
+        StyledSettings = [Size, Style]
+        Size.Width = 657.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Candara'
+        TextSettings.FontColor = claSienna
+        TextSettings.HorzAlign = Center
+        Text = 'Por: Nelson Lima - jnelsonlima3@gmail.com'
+        TabOrder = 0
+      end
+    end
+    object Layout2: TLayout
+      Align = Client
+      Size.Width = 657.000000000000000000
+      Size.Height = 288.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object btnTreino: TButton
+        Position.X = 88.000000000000000000
+        Position.Y = 91.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 105.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Treino'
+        OnClick = btnTreinoClick
+      end
+      object btnCorrida: TButton
+        Position.X = 260.000000000000000000
+        Position.Y = 91.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 105.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Corrida'
+      end
+      object Button1: TButton
+        Position.X = 432.000000000000000000
+        Position.Y = 91.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 105.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Corrida'
+      end
+    end
+  end
+  object Bluetooth1: TBluetooth
+    Enabled = True
+    Left = 592
+    Top = 232
+  end
 end
