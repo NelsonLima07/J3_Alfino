@@ -7,6 +7,7 @@ object FTreino: TFTreino
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
   DesignerMasterStyle = 0
   object ScaledLayout1: TScaledLayout
     Align = Client
@@ -24,14 +25,27 @@ object FTreino: TFTreino
       object Label1: TLabel
         StyledSettings = [Style, FontColor]
         Position.X = 300.000000000000000000
-        Position.Y = 30.000000000000000000
+        Position.Y = 6.000000000000000000
         Size.Width = 213.000000000000000000
-        Size.Height = 73.000000000000000000
+        Size.Height = 59.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Family = 'Verdana'
         TextSettings.Font.Size = 36.000000000000000000
         Text = '00:00.000'
         TabOrder = 0
+      end
+      object lblRefVolta: TLabel
+        StyledSettings = [Family, Style]
+        Position.X = 301.000000000000000000
+        Position.Y = 69.000000000000000000
+        Size.Width = 192.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 22.000000000000000000
+        TextSettings.FontColor = claBlue
+        TextSettings.HorzAlign = Center
+        Text = '-'
+        TabOrder = 1
       end
     end
     object Layout1: TLayout
@@ -45,7 +59,7 @@ object FTreino: TFTreino
       object btnLap: TButton
         StyledSettings = [FontColor]
         Position.X = 4.000000000000000000
-        Position.Y = 31.000000000000000000
+        Position.Y = 4.000000000000000000
         Size.Width = 80.000000000000000000
         Size.Height = 73.000000000000000000
         Size.PlatformDefault = False
@@ -56,6 +70,16 @@ object FTreino: TFTreino
         TextSettings.Font.StyleExt = {00070000000000000004000000}
         OnClick = btnLapClick
       end
+      object BtnFinalizaTreino: TButton
+        Position.X = 4.000000000000000000
+        Position.Y = 88.000000000000000000
+        Size.Width = 81.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Finaliza'
+        OnClick = BtnFinalizaTreinoClick
+      end
     end
     object Layout2: TLayout
       Align = Top
@@ -63,6 +87,23 @@ object FTreino: TFTreino
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
+      object Label2: TLabel
+        Position.Y = 16.000000000000000000
+        Text = 'Label2'
+        TabOrder = 0
+      end
+      object lblVolta: TLabel
+        Align = Right
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 552.000000000000000000
+        Size.Width = 88.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 28.000000000000000000
+        TextSettings.HorzAlign = Center
+        Text = '0'
+        TabOrder = 1
+      end
     end
     object Layout3: TLayout
       Align = Bottom
@@ -71,12 +112,18 @@ object FTreino: TFTreino
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
+      object lblMelhorBolta: TLabel
+        Position.X = 8.000000000000000000
+        Position.Y = 16.000000000000000000
+        Text = 'lblMelhorBolta'
+        TabOrder = 0
+      end
     end
   end
-  object Timer1: TTimer
+  object TmrTempo: TTimer
     Enabled = False
     Interval = 10
-    OnTimer = Timer1Timer
+    OnTimer = TmrTempoTimer
     Left = 16
     Top = 66
   end
